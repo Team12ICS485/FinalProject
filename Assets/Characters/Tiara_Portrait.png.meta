@@ -130,7 +130,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Tiara_Portrait_0: -5530450934293353055
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
