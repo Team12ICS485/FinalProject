@@ -73,6 +73,7 @@ Be cocky: Anything you can think of, I’ll make it taste better than anything y
 Tiara: A-Alright, then… how about a Manhattan? A little sweeter, if that’s okay.
 
 Dominic: A Manhattan? Sounds good, leave it to me.
+<img width='500' alt='dominic' src='https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Dominic_Portrait.png'>
 
 Makes a drink in the game, and can’t fail the tutorial level.
 
