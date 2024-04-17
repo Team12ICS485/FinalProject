@@ -14,9 +14,18 @@ public class DialogueGraphView : GraphView
 
     public DialogueGraphView()
     {
+    styleSheets.Add(Resources.Load<StyleSheet>("DialogueGraph"));
+    SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
+
+
     this.AddManipulator(new ContentDragger());
     this.AddManipulator(new SelectionDragger());
     this.AddManipulator(new RectangleSelector());
+
+        var grid = new GridBackground(); 
+        Insert(0, grid);
+        grid.StretchToParentSize();
+
     AddElement(GenerateEntryPoint());
  }
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
@@ -73,9 +82,44 @@ public class DialogueGraphView : GraphView
         var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
         inputPort.portName = "Input";
         dialogueNode.inputContainer.Add(inputPort);
+
+        var button = new Button(() => { AddChoicePort(dialogueNode); });    
+        button.text = "New Choice";
+        dialogueNode.titleContainer.Add(button);
+
+
+
         dialogueNode.RefreshExpandedState();
         dialogueNode.RefreshPorts();
         dialogueNode.SetPosition(new Rect(Vector2.zero, defaultNodeSize));
         return dialogueNode;
     }
+
+    private void AddChoicePort(DialogueNode dialogueNode)
+    {
+        var generatedPort = GeneratePort(dialogueNode, Direction.Output);
+
+        var outputPortCount = dialogueNode.outputContainer.Query("connector").ToList().Count;
+        generatedPort.portName = $"Choice {outputPortCount}";
+
+        dialogueNode.outputContainer.Add(generatedPort);
+
+        /*var choicePort = dialogueNode.InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single, typeof(float));
+        choicePort.portName = "Dialogue Text";
+        generatedPort.contentContainer.Add(new Label(" "));
+        generatedPort.contentContainer.Add(choicePort);
+        var deleteButton = new Button(() => RemovePort(dialogueNode, generatedPort))
+        {
+            text = "X"
+        };
+        generatedPort.contentContainer.Add(deleteButton);
+        generatedPort.contentContainer.Add(new Label(" "));
+        dialogueNode.outputContainer.Add(generatedPort);
+        */
+        dialogueNode.RefreshPorts();
+        dialogueNode.RefreshExpandedState();
+        
+    }
+        
 }
+
