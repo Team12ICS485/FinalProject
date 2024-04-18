@@ -10,31 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae5c9b4be5cb2d6468fde798ccfb53cc, type: 3}
-  m_Name: test1
+  m_Name: Test1
   m_EditorClassIdentifier: 
   NodeLinks:
-  - BaseNodeGuid: 23b3a6a2-7450-475f-b855-4a12120cae13
-    PortName: Next
-    TargetNodeGuid: 56449f85-67f7-4d71-a014-624ea90d6c01
-  - BaseNodeGuid: 56449f85-67f7-4d71-a014-624ea90d6c01
+  - BaseNodeGuid: 17528554-4937-4d36-b10c-85a3aba67a1f
     PortName: Choice 1
-    TargetNodeGuid: 94ba6739-5ab5-4745-ac42-b1b6e2ed7eb3
-  - BaseNodeGuid: 94ba6739-5ab5-4745-ac42-b1b6e2ed7eb3
+    TargetNodeGuid: d20ebd4b-e371-4323-85f7-dcfe52c3f901
+  - BaseNodeGuid: 17528554-4937-4d36-b10c-85a3aba67a1f
     PortName: Choice 2
-    TargetNodeGuid: 06ccb5e3-60be-4fd7-a4db-af13d1d8ae4c
-  - BaseNodeGuid: 94ba6739-5ab5-4745-ac42-b1b6e2ed7eb3
-    PortName: Choice 1
-    TargetNodeGuid: 057d5482-6b92-4506-b464-1dc9b66f7ba1
+    TargetNodeGuid: 219b0883-68ec-442a-980b-01d88d33ce15
   DialogueNodes:
-  - Guid: 56449f85-67f7-4d71-a014-624ea90d6c01
+  - Guid: d20ebd4b-e371-4323-85f7-dcfe52c3f901
     DialogueText: Dialogue Node
-    Position: {x: 343.5, y: 72.5}
-  - Guid: 057d5482-6b92-4506-b464-1dc9b66f7ba1
+    Position: {x: 884.5, y: 328.5}
+  - Guid: 219b0883-68ec-442a-980b-01d88d33ce15
     DialogueText: Dialogue Node
-    Position: {x: 932.5, y: 200}
-  - Guid: 94ba6739-5ab5-4745-ac42-b1b6e2ed7eb3
+    Position: {x: 723.5, y: 518.5}
+  - Guid: 17528554-4937-4d36-b10c-85a3aba67a1f
     DialogueText: Dialogue Node
-    Position: {x: 592, y: 188.5}
-  - Guid: 06ccb5e3-60be-4fd7-a4db-af13d1d8ae4c
-    DialogueText: Dialogue Node
-    Position: {x: 789.5, y: 58}
+    Position: {x: 480.5, y: 200}

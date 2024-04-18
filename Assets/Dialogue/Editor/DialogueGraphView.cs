@@ -15,6 +15,7 @@ public class DialogueGraphView : GraphView
 
     public DialogueGraphView()
     {
+<<<<<<< HEAD
         styleSheets.Add(Resources.Load<StyleSheet>("DialogueGraph"));
         SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
 
@@ -29,6 +30,13 @@ public class DialogueGraphView : GraphView
 
         AddElement(GenerateEntryPoint());
     }
+=======
+    this.AddManipulator(new ContentDragger());
+    this.AddManipulator(new SelectionDragger());
+    this.AddManipulator(new RectangleSelector());
+    AddElement(GenerateEntryPoint());
+ }
+>>>>>>> parent of 0875ada (dialogueGraphView)
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
     {
         var compatiblePorts = new List<Port>();
@@ -83,6 +91,7 @@ public class DialogueGraphView : GraphView
         var inputPort = GeneratePort(dialogueNode, Direction.Input, Port.Capacity.Multi);
         inputPort.portName = "Input";
         dialogueNode.inputContainer.Add(inputPort);
+<<<<<<< HEAD
 
         var button = new Button(() => { AddChoicePort(dialogueNode); });
         button.text = "New Choice";
@@ -102,11 +111,14 @@ public class DialogueGraphView : GraphView
 
 
 
+=======
+>>>>>>> parent of 0875ada (dialogueGraphView)
         dialogueNode.RefreshExpandedState();
         dialogueNode.RefreshPorts();
         dialogueNode.SetPosition(new Rect(Vector2.zero, defaultNodeSize));
         return dialogueNode;
     }
+<<<<<<< HEAD
 
     public void AddChoicePort(DialogueNode dialogueNode, string overridenPortName = "")
     {
@@ -165,3 +177,6 @@ public class DialogueGraphView : GraphView
 }
 
 
+=======
+}
+>>>>>>> parent of 0875ada (dialogueGraphView)
