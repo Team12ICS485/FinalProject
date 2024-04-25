@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using Ink.Runtime;
+
 public class DialogueTrigger : MonoBehaviour
 {
-    [SerializeField] private TextAsset inkJSON; // Drag your Ink JSON file here in the Inspector{
-    private void OnMouseOver()
+    public TextAsset inkJSON; // Assign this in the Inspector with your Ink JSON file
+
+    private void Update()
     {
-        // Check if the right mouse button was clicked
-        if (Input.GetMouseButtonDown(0)) // 1 is the button index for the right mouse button
+        if (Input.GetMouseButtonDown(0))
         {
             TriggerDialogue();
         }
@@ -17,6 +14,9 @@ public class DialogueTrigger : MonoBehaviour
 
     private void TriggerDialogue()
     {
-        DialogueManager.Instance.EnterDialogueMode(inkJSON); // Make sure to assign your Ink JSON file correctly
+        if (!DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+        }
     }
 }

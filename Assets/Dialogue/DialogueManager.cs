@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
+using JetBrains.Annotations;
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -13,74 +15,69 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
-    private TextMeshProUGUI[] choicesText;
-
-    private bool dialogueIsPlaying;
-    public bool DialogueIsPlaying
-    {
-        get { return dialogueIsPlaying; }
-        private set { dialogueIsPlaying = value; }
-    }
-
-    private static DialogueManager instance;
-    public static DialogueManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                Debug.LogError("DialogueManager instance is not initialized yet.");
-            }
-            return instance;
-        }
-    }
+    [SerializeField] private TextMeshProUGUI[] choicesText;
 
     private Story currentStory;
+    public bool dialogueIsPlaying { get; private set; }
+
+    public static DialogueManager instance;
 
     private void Awake()
     {
-        if (instance != null && instance != this)
+        if (instance != null)
         {
-            Debug.LogWarning("Another instance of DialogueManager already exists.");
-            Destroy(gameObject);
+            Debug.LogWarning("More than one DialogueManager instance found!");
+            Destroy(gameObject);  // Destroy the extra instance.
+            return;
         }
-        else
-        {
-            instance = this;
-            Debug.Log("DialogueManager instance created");
-        }
+        instance = this;
+        DontDestroyOnLoad(gameObject); // Make it persist across scenes.
+    }
+
+    public static DialogueManager GetInstance()
+    {
+        return instance;
     }
 
     private void Start()
     {
-        DialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
+        dialogueIsPlaying = false;
+        if (dialoguePanel != null)
+            dialoguePanel.SetActive(false);
 
-        // Initialize choices text
-        choicesText = new TextMeshProUGUI[choices.Length];
-        for (int i = 0; i < choices.Length; i++)
+        if (choices != null && choices.Length > 0)
         {
-            TextMeshProUGUI choiceText = choices[i].GetComponentInChildren<TextMeshProUGUI>();
-            if (choiceText != null)
+            choicesText = new TextMeshProUGUI[choices.Length];
+            for (int index = 0; index < choices.Length; index++)
             {
-                choicesText[i] = choiceText;
+                if (choices[index] != null)
+                    choicesText[index] = choices[index].GetComponentInChildren<TextMeshProUGUI>();
             }
+        }
+    }
+
+    private void Update()
+    {
+        if (dialogueIsPlaying && currentStory.currentChoices.Count == 0 && Input.GetMouseButtonDown(0))
+        {
+            ContinueStory();
         }
     }
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
-        if (inkJSON != null)
-        {
-            currentStory = new Story(inkJSON.text);
-            DialogueIsPlaying = true;
-            dialoguePanel.SetActive(true);
-            ContinueStory();
-        }
-        else
-        {
-            Debug.LogError("Ink JSON asset is null.");
-        }
+        currentStory = new Story(inkJSON.text);
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+        ContinueStory();
+    }
+
+    private IEnumerator ExitDialogueMode()
+    {
+        yield return new WaitForSeconds(0.2f);  // This could include a fade out or other animation.
+        dialogueIsPlaying = false;
+        dialoguePanel.SetActive(false);
+        dialogueText.text = "";
     }
 
     private void ContinueStory()
@@ -92,53 +89,42 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            ExitDialogueMode();
+            StartCoroutine(ExitDialogueMode());
         }
     }
 
-    private void Update()
+    private void InitializeChoices()
     {
-        if (!DialogueIsPlaying)
+        for (int i = 0; i < choices.Length; i++)
         {
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            ContinueStory();
+            int choiceIndex = i;
+            choices[i].GetComponent<Button>().onClick.AddListener(() => MakeChoice(choiceIndex));
         }
     }
 
-    private void ExitDialogueMode()
-    {
-        DialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
-        dialogueText.text = "";
-        foreach (GameObject choice in choices)
-        {
-            choice.SetActive(false);  // Ensure all choice buttons are hidden when not in use
-        }
-    }
-
-    private void DisplayChoices()
+    public void DisplayChoices()
     {
         List<Choice> currentChoices = currentStory.currentChoices;
-        if (currentChoices.Count > choicesText.Length)
+        for (int i = 0; i < choices.Length; i++)
         {
-            Debug.LogError("More choices than UI can handle");
-            return;  // Exit the function to avoid index out of range errors
+            if (i < currentChoices.Count)
+            {
+                choices[i].SetActive(true);
+                choicesText[i].text = currentChoices[i].text;
+            }
+            else
+            {
+                choices[i].SetActive(false);
+            }
         }
 
-        for (int i = 0; i < currentChoices.Count; i++)
-        {
-            choices[i].SetActive(true);
-            choicesText[i].text = currentChoices[i].text;
-        }
+        InitializeChoices();
+    }
 
-        // Hide unused choices
-        for (int i = currentChoices.Count; i < choicesText.Length; i++)
-        {
-            choices[i].SetActive(false);
-        }
+    public void MakeChoice(int choiceIndex)
+    {
+        Debug.Log($"Making choice {choiceIndex}");
+        currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
     }
 }
