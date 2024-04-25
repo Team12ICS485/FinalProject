@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
+    [SerializeField] private float typingSpeed = 0.05f;  // Speed at which the dialogue text is displayed.
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -18,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] choicesText;
 
     private Story currentStory;
+    private Coroutine displayLineCoroutine;
     public bool dialogueIsPlaying { get; private set; }
 
     public static DialogueManager instance;
@@ -72,6 +74,16 @@ public class DialogueManager : MonoBehaviour
         ContinueStory();
     }
 
+    private IEnumerator DisplayLine(string line)
+    {
+        dialogueText.text = "";
+        foreach (char letter in line.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+    }
+
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);  // This could include a fade out or other animation.
@@ -84,7 +96,12 @@ public class DialogueManager : MonoBehaviour
     {
         if (currentStory.canContinue)
         {
-            dialogueText.text = currentStory.Continue();
+            if (displayLineCoroutine != null)
+            {
+                StopCoroutine(displayLineCoroutine);
+
+            }
+            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
             DisplayChoices();
         }
         else
