@@ -22,6 +22,9 @@ public class DialogueManager : MonoBehaviour
     private Coroutine displayLineCoroutine;
     public bool dialogueIsPlaying { get; private set; }
 
+    public bool canCountineToNextLine = false;
+
+
     public static DialogueManager instance;
 
     private void Awake()
@@ -60,7 +63,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (dialogueIsPlaying && currentStory.currentChoices.Count == 0 && Input.GetMouseButtonDown(0))
+        if (canCountineToNextLine && dialogueIsPlaying && currentStory.currentChoices.Count == 0 && Input.GetMouseButtonDown(0))
         {
             ContinueStory();
         }
@@ -77,11 +80,19 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator DisplayLine(string line)
     {
         dialogueText.text = "";
+
+        canCountineToNextLine = false;
+
         foreach (char letter in line.ToCharArray())
         {
+            if (Input.GetMouseButtonDown(0)){
+                dialogueText.text = line;
+                break;
+            }
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        canCountineToNextLine = true;
     }
 
     private IEnumerator ExitDialogueMode()
@@ -139,9 +150,14 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void MakeChoice(int choiceIndex)
+
     {
-        Debug.Log($"Making choice {choiceIndex}");
-        currentStory.ChooseChoiceIndex(choiceIndex);
-        ContinueStory();
+        if (canCountineToNextLine)
+        {
+            Debug.Log($"Making choice {choiceIndex}");
+            currentStory.ChooseChoiceIndex(choiceIndex);
+            ContinueStory();
+        }
+       
     }
 }
