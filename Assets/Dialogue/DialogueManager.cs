@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using Ink.Runtime;
 using JetBrains.Annotations;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -118,9 +119,10 @@ public class DialogueManager : MonoBehaviour
         else
         {
             StartCoroutine(ExitDialogueMode());
+            LoadNextScene();
         }
     }
-
+        
     private void InitializeChoices()
     {
         for (int i = 0; i < choices.Length; i++)
@@ -159,5 +161,10 @@ public class DialogueManager : MonoBehaviour
             ContinueStory();
         }
        
+    }
+
+    private void LoadNextScene()
+    {
+        SceneManager.LoadScene("DrinkMakerScene"); 
     }
 }
