@@ -81,7 +81,7 @@ public class CraftingManager : MonoBehaviour
         }
         for(int i =0; i <recipes.Length; i++)
         {
-            //f (recipes[i] == currentRecipesString)
+            if (recipes[i] == currentRecipeString)
             {
                 resultSlots.gameObject.SetActive(true);
                 resultSlots.GetComponent<UnityEngine.UI.Image>().sprite = recipeResults[i].GetComponent<UnityEngine.UI.Image>().sprite;

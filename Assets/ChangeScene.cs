@@ -1,35 +1,24 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    private bool isSceneAActive = true; // Track which scene is currently active.
+    private int currentSceneIndex;
 
     private void Start()
     {
-        // Determine initial state based on the active scene.
-        var currentSceneName = SceneManager.GetActiveScene().name;
-        isSceneAActive = currentSceneName == "SceneA"; // Replace "SceneA" with your actual scene name.
+        // Get the index of the current active scene
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
-    public void ToggleScene()
+    public void MoveToScene(int sceneID)
     {
-        StartCoroutine(TransitionToOtherScene());
-    }
+        // Unload the current scene
+        SceneManager.UnloadSceneAsync(currentSceneIndex);
 
-    private IEnumerator TransitionToOtherScene()
-    {
-        // Determine which scene to load based on current flag state.
-        string sceneToLoad = isSceneAActive ? "SceneB" : "SceneA"; // Replace with actual scene names.
-
-        // Unload the current scene.
-        yield return SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
-
-        // Load the new scene in single mode.
-        SceneManager.LoadScene(sceneToLoad, LoadSceneMode.Single);
-
-        // Flip the flag state.
-        isSceneAActive = !isSceneAActive;
+        // Load the new scene with single mode
+        SceneManager.LoadScene(sceneID, LoadSceneMode.Single);
     }
 }

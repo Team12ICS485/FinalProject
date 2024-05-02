@@ -15,7 +15,13 @@ EditorBuildSettings:
     path: Assets/Scenes/NPC3.unity
     guid: 7782b27fbbd89504691465b684401185
   - enabled: 1
-    path: Assets/Final.unity
+    path: Assets/Scenes/Final.unity
     guid: 54c982bd53773cf4a85c9dc46f8045c7
+  - enabled: 1
+    path: Assets/Scenes/NPC4.unity
+    guid: d5e65695d65bff34ab71f4a22df18cc8
+  - enabled: 1
+    path: Assets/Scenes/DrinkMakerScene.unity
+    guid: 4f30ab89825877345a8b6aaf1567eeff
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
