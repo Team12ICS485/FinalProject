@@ -1,99 +1,90 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.UIElements;
 
 public class CraftingManager : MonoBehaviour
 {
-    private Item currentItem;
-    public UnityEngine.UI.Image customCursor;
-    public Slots[] craftingSlots;
+    public Image customCursor;           // Custom cursor to show selected item
+    public Slots[] craftingSlots;        // Array of slots for crafting items
+    public List<Item> itemList;          // List of items currently in slots
+    public string[] recipes;             // Array of recipes in string format
+    public Item[] recipeResults;         // Array of resulting items from recipes
+    public Slots resultSlots;            // Slot for displaying the result of crafting
 
-    public List<Item> itemList;
-    public string[] recipes;
-    public Item[] recipeResults;
-    public Slots resultSlots;
+    private Item currentItem;            // Currently selected item
+
+    void Awake()
+    {
+        // Initialize itemList based on the number of crafting slots
+        itemList = new List<Item>(new Item[craftingSlots.Length]);
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonUp(0) && currentItem != null)
+        {
+            DropCurrentItem();
+        }
+    }
 
     public void OnMouseDownItem(Item item)
     {
-      if(currentItem == null)
-        {
         currentItem = item;
         customCursor.gameObject.SetActive(true);
-        customCursor.sprite = currentItem.GetComponent<UnityEngine.UI.Image>().sprite;
-      }
+        customCursor.sprite = currentItem.itemIcon;  // Set the custom cursor icon
     }
 
-    private void Update()
+    private void DropCurrentItem()
     {
-        if (Input.GetMouseButtonUp(0))
+        customCursor.gameObject.SetActive(false);
+        FindNearestSlot();
+        currentItem = null;  // Reset current item after it has been dropped
+    }
+
+    private void FindNearestSlot()
+    {
+        Slots nearestSlot = null;
+        float shortestDistance = Mathf.Infinity;
+
+        foreach (Slots slot in craftingSlots)
         {
-            if(currentItem != null)
+            float distance = Vector2.Distance(Input.mousePosition, Camera.main.WorldToScreenPoint(slot.transform.position));
+            if (distance < shortestDistance)
             {
-                customCursor.gameObject.SetActive(false);
-                currentItem = null;
-
-                Slots nearestSlot = null;
-                float shortestDistance = float.MaxValue;
-
-                foreach (Slots slot in craftingSlots)
-                {
-                   float dist = Vector2.Distance(Input.mousePosition, slot.transform.position);
-                    if(dist < shortestDistance)
-                    {
-                            nearestSlot = slot;
-                            shortestDistance = dist;
-                      }
-                }
-                if(nearestSlot != null)
-                {
-                    nearestSlot.gameObject.SetActive(true);
-                    nearestSlot.GetComponent<UnityEngine.UI.Image>().sprite = currentItem.GetComponent<UnityEngine.UI.Image>().sprite;
-                    nearestSlot.item = currentItem;
-                    itemList[nearestSlot.index] = currentItem;
-
-                    currentItem = null;
-                    CheckForCreatedRecipes();
-                }
-
+                nearestSlot = slot;
+                shortestDistance = distance;
             }
         }
 
-    }
-    void CheckForCreatedRecipes()
-    {
-      resultSlots.gameObject.SetActive(false);
-        resultSlots.item = null;
-
-        string currentRecipeString = "";
-        foreach(Item item in itemList)
+        if (nearestSlot != null && currentItem != null)
         {
-            if(item != null)
-            {
-                currentRecipeString += item.itemName;
-            }
-            else
-            {
-                currentRecipeString += "null";
-            } 
+            nearestSlot.SetItem(currentItem);
+            itemList[nearestSlot.index] = currentItem;  // Update itemList at the slot's index
+            CheckForCreatedRecipes();
         }
-        for(int i =0; i <recipes.Length; i++)
+    }
+
+    public void CheckForCreatedRecipes()
+    {
+        string currentRecipe = string.Join("+", itemList.FindAll(item => item != null).ConvertAll(item => item.itemName));
+        Debug.Log("Current Recipe String: " + currentRecipe);  // Debugging current recipe string
+
+        bool recipeFound = false;
+        for (int i = 0; i < recipes.Length; i++)
         {
-            if (recipes[i] == currentRecipeString)
+            if (recipes[i] == currentRecipe)
             {
-                resultSlots.gameObject.SetActive(true);
-                resultSlots.GetComponent<UnityEngine.UI.Image>().sprite = recipeResults[i].GetComponent<UnityEngine.UI.Image>().sprite;
-                resultSlots.item = recipeResults[i];
+                Debug.Log("Recipe Match Found: " + recipes[i]);  // Confirm recipe match found
+                resultSlots.SetItem(recipeResults[i]);  // Set the resulting item in the result slot
+                recipeFound = true;
                 break;
             }
         }
-    }
-      public void OnClickSlot(Slots slot){
-        slot.item = null;
-        itemList[slot.index] = null;
-        slot.gameObject.SetActive(false);
-        CheckForCreatedRecipes();
+
+        if (!recipeFound)
+        {
+            Debug.Log("No matching recipe found.");
+            resultSlots.SetItem(null);  // Optionally clear the result slot if no recipe matches
+        }
     }
 }

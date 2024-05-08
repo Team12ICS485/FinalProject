@@ -1,12 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 using Ink.Runtime;
-using JetBrains.Annotations;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -23,8 +21,7 @@ public class DialogueManager : MonoBehaviour
     private Coroutine displayLineCoroutine;
     public bool dialogueIsPlaying { get; private set; }
 
-    public bool canCountineToNextLine = false;
-
+    public bool canContinueToNextLine = false;
 
     public static DialogueManager instance;
 
@@ -54,17 +51,17 @@ public class DialogueManager : MonoBehaviour
         if (choices != null && choices.Length > 0)
         {
             choicesText = new TextMeshProUGUI[choices.Length];
-            for (int index = 0; index < choices.Length; index++)
+            for (int i = 0; i < choices.Length; i++)
             {
-                if (choices[index] != null)
-                    choicesText[index] = choices[index].GetComponentInChildren<TextMeshProUGUI>();
+                if (choices[i] != null)
+                    choicesText[i] = choices[i].GetComponentInChildren<TextMeshProUGUI>();
             }
         }
     }
 
     private void Update()
     {
-        if (canCountineToNextLine && dialogueIsPlaying && currentStory.currentChoices.Count == 0 && Input.GetMouseButtonDown(0))
+        if (canContinueToNextLine && dialogueIsPlaying && currentStory.currentChoices.Count == 0 && Input.GetMouseButtonDown(0))
         {
             ContinueStory();
         }
@@ -82,26 +79,32 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueText.text = "";
 
-        canCountineToNextLine = false;
+        canContinueToNextLine = false;
 
         foreach (char letter in line.ToCharArray())
         {
-            if (Input.GetMouseButtonDown(0)){
+            if (Input.GetMouseButtonDown(0))
+            {
                 dialogueText.text = line;
                 break;
             }
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-        canCountineToNextLine = true;
+        canContinueToNextLine = true;
     }
 
     private IEnumerator ExitDialogueMode()
     {
         yield return new WaitForSeconds(0.2f);  // This could include a fade out or other animation.
-        dialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
-        dialogueText.text = "";
+
+        // Check if the dialoguePanel still exists before trying to access it.
+        if (dialoguePanel != null)
+        {
+            dialogueIsPlaying = false;
+            dialoguePanel.SetActive(false);
+            dialogueText.text = "";
+        }
     }
 
     private void ContinueStory()
@@ -111,7 +114,6 @@ public class DialogueManager : MonoBehaviour
             if (displayLineCoroutine != null)
             {
                 StopCoroutine(displayLineCoroutine);
-
             }
             displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
             DisplayChoices();
@@ -119,10 +121,10 @@ public class DialogueManager : MonoBehaviour
         else
         {
             StartCoroutine(ExitDialogueMode());
-            LoadNextScene();
+            //LoadNextScene();
         }
     }
-        
+
     private void InitializeChoices()
     {
         for (int i = 0; i < choices.Length; i++)
@@ -152,19 +154,60 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void MakeChoice(int choiceIndex)
-
     {
-        if (canCountineToNextLine)
+        if (canContinueToNextLine)
         {
             Debug.Log($"Making choice {choiceIndex}");
             currentStory.ChooseChoiceIndex(choiceIndex);
             ContinueStory();
         }
-       
     }
 
-    private void LoadNextScene()
+    /*private void LoadNextScene()
     {
-        SceneManager.LoadScene("DrinkMakerScene"); 
+        SceneManager.LoadScene("DrinkMakerScene3");
     }
+
+    // Added methods for scene transition based on Ink outcomes
+    public void LoadDrinkMakerScene()
+    {
+        SceneManager.LoadScene("DrinkMakerScene3");
+    }
+
+    public void LoadMainScene()
+    {
+        SceneManager.LoadScene("NPC1(Tiara)");
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainScene")
+        {
+            int drinkResult = PlayerPrefs.GetInt("DrinkResult", 0);
+            HandleDialogueBasedOnResult(drinkResult);
+        }
+    }
+
+   private void HandleDialogueBasedOnResult(int result)
+    {
+        if (result == 1)
+        {
+            currentStory.ChoosePathString("success_path");
+        }
+        else
+        {
+            currentStory.ChoosePathString("failure_path");
+        }
+        ContinueStory();
+   }*/
 }
