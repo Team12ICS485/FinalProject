@@ -6,6 +6,9 @@
 * Lauren: laurenjc@hawaii.edu
 * Connor: cviela@hawaii.edu
 
+####  Trello Developmental Board
+[View our progress on Trello](https://trello.com/b/UNZm15lE/ics485-project-board)
+
 ### February 28th, 2024: Individual Brainstorming
 Individual Ideas
 * (Connor) Cocktail/Bartender puzzle game / Talk simulator. Serve a few customers during happy hour and talk with them. Each character is suspicious. At the end of your shift, the police interrogate you. Informing you served a drink to a wanted criminal. Remember the conversations you had with each customer in addition to what pieces of evidence the police can share with you and find the criminal.
