@@ -8,6 +8,8 @@
 
 ####  Trello Developmental Board
 [View our progress on Trello](https://trello.com/b/UNZm15lE/ics485-project-board)
+### Link to Video Game
+[Play the game on Itch.io](https://laurenjc.itch.io/pouring-secrets-our-happy-hours?secret=sZRSbaSxtlCvZ4igVObX662xBM8)
 
 ### February 28th, 2024: Individual Brainstorming
 Individual Ideas
