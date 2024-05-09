@@ -39,17 +39,9 @@ Serve a few customers during happy hour and talk with them. Each character is su
 ### April 3rd, 2024: Prototype 1
 (C) Created visual assets for the first set of characters. The main protagonist who is the bartender and owner of the mixology lounge named Dominic. The first customer is Tiara, who suffered a recent breakup. The second customer is Quinn, and currently in the works of developing assets for the UI and the background of the game.
 
-<div class="container">
-	   <div class="column">
-	     <img width='500' alt='dominic' src='https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Dominic_Portrait.png'>
-	   </div>
-	   <div class="column">
-	     <img width='500' alt='tiara' src='https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Tiara_Portrait.png'>
-	   </div>
-	   <div class="column">
-	     <img width='500' alt='quinn' src='https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Quinn_Portrait.png'>
-	   </div>
-</div>
+<a><img src="https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Dominic_Portrait.png" alt="Dominic"></a>
+<a><img src="https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Tiara_Portrait.png" alt="Tiara"></a>
+<a><img src="https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Quinn_Portrait.png" alt="Quinn"></a>
 
 (R) Formulated and started on the script writing and dialogue of the game. Fine tuned dialogue to make conversation feel more realistic, adding in subtle details and imagery descriptions. Worked to create the initial opening scene of the game, and the opening dialogue.
 
