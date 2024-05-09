@@ -57,9 +57,9 @@ Serve a few customers during happy hour and talk with them. Each character is su
 [View the Prototype](https://youtu.be/AWk0PFcCQxU)
 
 #### Screenshots of Prototype:
-<a><img src="Visual_Assets/Portraits/sc_1.png" alt="screenshot_1"></a>
+<a><img src="Visual_Assets/sc_1.PNG" alt="screenshot_1"></a>
 
-<a><img src="Visual_Assets/Portraits/sc_2.png" alt="screenshot_2"></a>
+<a><img src="Visual_Assets/sc_2.PNG" alt="screenshot_2"></a>
 
 ##### Script:
 Another late night at the small bar. Dominic is reading a newspaper about recent events that have been happening, news of a sudden crime occured earlier in the week, just in the nearby neighorhoods. Disgruntled, he continues his startup at the Mixology Lounge, an area of little room, but lots of attention for the finer things. 
