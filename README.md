@@ -42,15 +42,12 @@ Serve a few customers during happy hour and talk with them. Each character is su
 ### April 3rd, 2024: Prototype 1
 (Connor) Created visual assets for the first set of characters. The main protagonist who is the bartender and owner of the mixology lounge named Dominic. The first customer is Tiara, who suffered a recent breakup. The second customer is Quinn, and currently in the works of developing assets for the UI and the background of the game.
 
-<a><img src="Visual_Assets/Portraits/Dominic_Portrait.png" alt="Dominic" width="200" height="200"></a>
+<a><img src="Visual_Assets/Portraits/Dominic_Portrait.png" alt="Dominic" width="300" height="300"></a>
 
-<a><img src="Visual_Assets/Portraits/Tiara_Portrait.png" alt="Tiara" width="200" height="200"></a>
+<a><img src="Visual_Assets/Portraits/Tiara_Portrait.png" alt="Tiara" width="300" height="300"></a>
 
-<a><img src="Visual_Assets/Portraits/Quinn_Portrait.png" alt="Quinn" width="200" height="200"></a>
+<a><img src="Visual_Assets/Portraits/Quinn_Portrait.png" alt="Quinn" width="300" height="300"></a>
 
-![Dominic](Visual_Assets/Portraits/Dominic_Portrait.png)
-![Tiara](Visual_Assets/Portraits/Tiara_Portrait.png)
-![Quinn](Visual_Assets/Portraits/Quinn_Portrait.png)
 
 (Robin) Formulated and started on the script writing and dialogue of the game. Fine tuned dialogue to make conversation feel more realistic, adding in subtle details and imagery descriptions. Worked to create the initial opening scene of the game, and the opening dialogue.
 
@@ -58,6 +55,11 @@ Serve a few customers during happy hour and talk with them. Each character is su
 
 #### Preview of Prototype:
 [View the Prototype](https://youtu.be/AWk0PFcCQxU)
+
+#### Screenshots of Prototype:
+<a><img src="Visual_Assets/Portraits/sc_1.png" alt="screenshot_1"></a>
+
+<a><img src="Visual_Assets/Portraits/sc_2.png" alt="screenshot_2"></a>
 
 ##### Script:
 Another late night at the small bar. Dominic is reading a newspaper about recent events that have been happening, news of a sudden crime occured earlier in the week, just in the nearby neighorhoods. Disgruntled, he continues his startup at the Mixology Lounge, an area of little room, but lots of attention for the finer things. 
@@ -101,9 +103,8 @@ Dominic: And here you are miss, one Manhattan. With an extra cherry on top just 
 
 (Connor) Touch ups on assets and dialog boxes were completed. 
 
-<a><img src="Visual_Assets/Portraits/Officer_Portrait.png" alt="Murphy" width="200" height="200"></a>
+<a><img src="Visual_Assets/Portraits/Officer_Portrait.png" alt="Murphy" width="300" height="300"></a>
 
-![Officer](Visual_Assets/Portraits/Officer_Portrait.png)
 
 #### Character Concept Writeup
 
