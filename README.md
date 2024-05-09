@@ -42,9 +42,6 @@ Serve a few customers during happy hour and talk with them. Each character is su
 ![Dominic](Dominic_Portrait.png)
 ![Tiara](Tiara_Portrait.png)
 ![Quinn](Quinn_Portrait.png)
-<a><img src="https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Dominic_Portrait.png" alt="Dominic"></a>
-<a><img src="https://raw.githubusercontent.com/Team12ICS485/ICS485Team12/main/Visual_Assets/Portraits/Tiara_Portrait.png" alt="Tiara"></a>
-<a><img src="https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Quinn_Portrait.png" alt="Quinn"></a>
 
 (R) Formulated and started on the script writing and dialogue of the game. Fine tuned dialogue to make conversation feel more realistic, adding in subtle details and imagery descriptions. Worked to create the initial opening scene of the game, and the opening dialogue.
 
