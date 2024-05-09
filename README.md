@@ -40,7 +40,7 @@ Serve a few customers during happy hour and talk with them. Each character is su
 (C) Created visual assets for the first set of characters. The main protagonist who is the bartender and owner of the mixology lounge named Dominic. The first customer is Tiara, who suffered a recent breakup. The second customer is Quinn, and currently in the works of developing assets for the UI and the background of the game.
 
 <a><img src="https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Dominic_Portrait.png" alt="Dominic"></a>
-<a><img src="https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Tiara_Portrait.png" alt="Tiara"></a>
+<a><img src="[https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Tiara_Portrait.png](https://raw.githubusercontent.com/Team12ICS485/ICS485Team12/main/Visual_Assets/Portraits/Tiara_Portrait.png)" alt="Tiara"></a>
 <a><img src="https://github.com/Team12ICS485/FinalProject/blob/main/Visual_Assets/Portraits/Quinn_Portrait.png" alt="Quinn"></a>
 
 (R) Formulated and started on the script writing and dialogue of the game. Fine tuned dialogue to make conversation feel more realistic, adding in subtle details and imagery descriptions. Worked to create the initial opening scene of the game, and the opening dialogue.
@@ -48,6 +48,7 @@ Serve a few customers during happy hour and talk with them. Each character is su
 (L) Crafted and put together the current assets into a UI menu, implemented the dialogue to scroll through on click in the Unity screen, screen recorded the demo of the prototype 1.
 
 #### Preview of Prototype:
+
 ##### Script:
 Another late night at the small bar. Dominic is reading a newspaper about recent events that have been happening, news of a sudden crime occured earlier in the week, just in the nearby neighorhoods. Disgruntled, he continues his startup at the Mixology Lounge, an area of little room, but lots of attention for the finer things. 
 
@@ -61,14 +62,14 @@ She bobbed her head as she entered the room. As the door thudded behind her, she
 
 As she stammered across the room, her eyes darted around the decor, gazing at the portraits and artistry tapered across the walls. 
 
-3.Dominic: You look like a new face, what can I get for you tonight? 
+Dominic: You look like a new face, what can I get for you tonight? 
 
 Her eyes met the look of the Black Dahlia hung atop the sidewall, enticed by the actresses' complexion. That same longing in both of their gazes.
 She dragged the stool from underneath the bar counter and took a seat.
 
 Tiara: …Do you have a menu..?
 
-5. Q Dominic: Actually this is a mixology lounge. Better than your typical 5 bottle bar. Top shelf, bottom shelf, you name it, we probably got it. 
+Q Dominic: Actually this is a mixology lounge. Better than your typical 5 bottle bar. Top shelf, bottom shelf, you name it, we probably got it. 
 Be confident: Anything you ask for, I can make it easily.
 Be considerate: If you want anything made to order, just ask.
 Be cocky: Anything you can think of, I’ll make it taste better than anything you’ve tried before.
@@ -82,47 +83,24 @@ Makes a drink in the game, and can’t fail the tutorial level.
 
 Dominic: And here you are miss, one Manhattan. With an extra cherry on top just for you.
 
-Tiara: Oh, thank you. 
-She shifted to one side, lifting the glass and swirling it softly. She stared at the [glass name] so deeply, then took a sip.
-. . .
-Her face puckered slightly, then eased up. The strain in her gaze started to let up, letting out a little sigh.
 
-Dominic: She seemed like she carried her worries on her shoulder.
-So, what’s your case?
-You fancying the drink?
-How’s the night treating you?
 
-Tiara:
-To pass the time really
-Oh, it’s a bit strong, but I like the aftertaste.
-It’s been a bit, but I’m here now.
-  Sorry, I’m Tiara by the way.
+### April 24th, 2024
+(Robin) More script work and concept writing about the 4 characters were finished.
+(Lauren) Creating the multiple choice options for dialoge was implemented.
+(Connor) Touch ups on assets and dialog boxes were completed. 
 
-Dominic: Well it’s nice to meet you Tiara, I’m Dominic.  
+#### Character Concept Writeup
 
-Tiara: I-is it always empty like this..?
+Client 1: Tiara - A woman who had been struggling with a tough and toxic relationship where domestic abuse has become prevalent in her day to day life. Though, it did not start off that way, as they did have good moments, but once things began to get serious between the two of them, the boyfriend became quick tempered and angry, blaming his own incompetence and insecurities onto her. During one instance of domestic abuse, she retaliates, and in self-defense, stands her ground. *Should she be the killer in this runthrough, she would have felt a sort of freeing elation in fighting back, taking the kitchen knife and letting out all of her resentment on her boyfriend’s body.* After the instance, she took what she could, and ran out the door. She plans on leaving this part of the city, wanting to leave that part of her life behind, even if it means starting over. She is somewhat scared to call herself free, worried about her boyfriend. *If she is the killer, she is actually worried about being caught for her murder. She also would have been shaky if a knife was mentioned* To try to find a spot to calm down, she wanders into the bar.
 
-Dominic: People come and go, but as for tonight, you are the first. Many don’t even realize that we have a full bar service.
+Client 2: Quinn - An ex-mobster who used to move around the low ranking crime rings under a greater mafia group. Instead of extorting, shaking down debtors, he usually stacks the books, making sure that the blood money the mobster gets becomes clean money. He does so by buying and selling mattresses. During this time, he has been pocketing some of the money, and left a year ago. Recently one of the old mobsters, Tommy-Two Hands, tried to extort the money out of Quinn, and the two get into a kerfuffle. The altercation turns sour, but Quinn makes it out with the skin of his teeth. *If Quinn is the killer, then he kills Tommy Two-Hands during this altercation.* Quinn then hightails it out of there, trying to keep his composure, he heads downtown before trying to leave the city to escape the mob. In order to lay low for the moment, he decides to dip into the bar.
 
-Tiara: Yeah, it’s such a small place. But the music is quite cozy.
-That somber look returns to her face.
-Looks like a great choice for a date night.
+Client 3: [Mail Person] - They would spend their day to day working at the town’s only post office, acting as the mailer for the surrounding buildings. Efficiency and a good moral compass is their motto. They learned a lot of their ideals while training in karate. They could drone on and on about the morning route that they take, or even about saying hello to many of the neighbors. One day recently, while out on their normal routine of delivering mail, a thief tried to steal packages from them, and they managed to fend off of the robber. The robber had a knife, *If this person is the killer, then they turned the knife back onto the robber, causing one slice to their neck, becoming terrified of holding knives.* but instead the mailer disarmed them and the mailer gets away from the scene. Still shaken from the encounter, they take the ease off at the bar. They still will continue their job in the city as mailer, but they are shaken up by things for the moment.
 
-Dominic: Yeah, I’ve had a few customers come here for dates…
-Maybe next time you can be one of those customers.
-Most of them liked the atmosphere. It’s homey.
+Client 4: [Lifeguard] - This person works as an open water lifeguard at the nearby lake. Swimming has always been their passion, and they were very athletic at what they did. They took up lifeguard as an occupation in order to be closer with their passion as well as encourage others into swimming more as well. They ran a swimming program last summer, and are still proud of what they did. However, recently, there was a kid playing around with the others, and he would try to hold their breath underwater. What ended up happening was the kid got entangled in the water weeds before the surface of the water, and they did not come back up more than expected. The lifeguard noticed, as they noticed everything that happened at the lake, but did not act upon it. Finally, they acted, but too late. They removed the weeds from the kid’s feet and got them to land. They performed CPR, and the kid ended up surviving. If the Lifeguard is the killer, then unfortunate even with the resuscitation, the kid ends up passing away. The parents of the kid as well as the rest of the people there at the time all did not know what happened, but they know that the lifeguard “tried their best of their ability.” The lifeguard ends up taking the next few days off, and is thinking about quitting because of their incompetence, and is condemning their own slowness to react. *If the lifeguard is the killer, then the cop is looking for who was on duty during the kid’s death*. In order to cut the inner thoughts, they head over to the local bar.
 
-Tiara:
-That won’t happen anytime soon…, I just went through a bit of a breakup you could say.
-She seemed to be happy for a brief moment at the mention of her past lover, but her face contorted into fear.
-Yes, the atmosphere is nice, it’s rather calming. Nicer than when I was with him…
-She looked away for a brief moment, seemingly bitter about a past lover.
 
-Dominic: Oh I see… I’m sorry to hear that… Did everything end on good terms?
+The cop is at the bar, he opens up about the case, depending on if you can make him a good drink.  The bartender offers to help about the case since you've been given information, and if not, then will proceed to take you as well as some of the customers in for questioning.
 
-Tiara: Not really, our relationship was always messy. I’m just happy it’s all over.
-
-Dominic: Well, what’s over is over, right?
-
-Tiara: Right…
 
