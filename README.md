@@ -8,12 +8,12 @@
 
 ### February 28th, 2024: Individual Brainstorming
 Individual Ideas
-* (C) Cocktail/Bartender puzzle game / Talk simulator. Serve a few customers during happy hour and talk with them. Each character is suspicious. At the end of your shift, the police interrogate you. Informing you served a drink to a wanted criminal. Remember the conversations you had with each customer in addition to what pieces of evidence the police can share with you and find the criminal.
+* (Connor) Cocktail/Bartender puzzle game / Talk simulator. Serve a few customers during happy hour and talk with them. Each character is suspicious. At the end of your shift, the police interrogate you. Informing you served a drink to a wanted criminal. Remember the conversations you had with each customer in addition to what pieces of evidence the police can share with you and find the criminal.
 E.g. Coffee Talk + mystery game
 
-* (L) A farming simulator game about creating a farm and selling items to fund your personal expenses and items you need to buy to support your farm. It is set in a rural area, and there are obstacles like pests and dangerous wildlife that you must protect your farm from. If obstacles destroy too much of your crops, you will not make enough profit and will be forced to shut down your farm.
+* (Lauren) A farming simulator game about creating a farm and selling items to fund your personal expenses and items you need to buy to support your farm. It is set in a rural area, and there are obstacles like pests and dangerous wildlife that you must protect your farm from. If obstacles destroy too much of your crops, you will not make enough profit and will be forced to shut down your farm.
 
-* (R) Something along the lines of Lil Guardsman or Papers Please, in which the player would have to deal with situations relating to people they rarely met, but they need to decide on whether they help them out to the player's detriment, or if they stick to the rules and deny that person help. Something like VALL-HAll-A where the player must interact with these characters, maybe even growing attached to them, and then having to decide their fate.
+* (Robin) Something along the lines of Lil Guardsman or Papers Please, in which the player would have to deal with situations relating to people they rarely met, but they need to decide on whether they help them out to the player's detriment, or if they stick to the rules and deny that person help. Something like VALL-HAll-A where the player must interact with these characters, maybe even growing attached to them, and then having to decide their fate.
 * E.g Lil Guardsman, Papers Please, Coffee Talk
 
 ### March 6th, 2024: Group Concept Writing & Designing
@@ -37,7 +37,7 @@ Serve a few customers during happy hour and talk with them. Each character is su
 
 
 ### April 3rd, 2024: Prototype 1
-(C) Created visual assets for the first set of characters. The main protagonist who is the bartender and owner of the mixology lounge named Dominic. The first customer is Tiara, who suffered a recent breakup. The second customer is Quinn, and currently in the works of developing assets for the UI and the background of the game.
+(Connor) Created visual assets for the first set of characters. The main protagonist who is the bartender and owner of the mixology lounge named Dominic. The first customer is Tiara, who suffered a recent breakup. The second customer is Quinn, and currently in the works of developing assets for the UI and the background of the game.
 
 ![Dominic](Visual_Assets/Portraits/Dominic_Portrait.png)
 ![Tiara](Visual_Assets/Portraits/Tiara_Portrait.png)
@@ -57,7 +57,7 @@ My first customer of the night.
 
 Dominic: Welcome, come on in. Have a seat, anywhere on the bar is fine.
 
-Tiara (Character 1): Good evening.
+Tiara: Good evening.
 She bobbed her head as she entered the room. As the door thudded behind her, she jumped slightly at the sound. ( nervous. )
 
 As she stammered across the room, her eyes darted around the decor, gazing at the portraits and artistry tapered across the walls. 
@@ -69,7 +69,7 @@ She dragged the stool from underneath the bar counter and took a seat.
 
 Tiara: …Do you have a menu..?
 
-Q Dominic: Actually this is a mixology lounge. Better than your typical 5 bottle bar. Top shelf, bottom shelf, you name it, we probably got it. 
+Dominic: Actually this is a mixology lounge. Better than your typical 5 bottle bar. Top shelf, bottom shelf, you name it, we probably got it. 
 Be confident: Anything you ask for, I can make it easily.
 Be considerate: If you want anything made to order, just ask.
 Be cocky: Anything you can think of, I’ll make it taste better than anything you’ve tried before.
@@ -105,10 +105,17 @@ Client 4: [Lifeguard] - This person works as an open water lifeguard at the near
 
 The cop is at the bar, he opens up about the case, depending on if you can make him a good drink.  The bartender offers to help about the case since you've been given information, and if not, then will proceed to take you as well as some of the customers in for questioning.
 
-### April 31st
+### April 30th, 2024
 **Due to time constraints as well as other life commitments, our game has been halved in size, and shall focus on the two initial customer characters, Tiara and Quinn as the premise of the story, with the player playing as the bartender Dominic.** 
 Unfortunately, as much as we wished to work with a larger scale story with intertwining stories between the four customers, we must focus on the story of the first two. Tiara who fought back against her abusive boyfriend in self-defense, and Quinn, an ex-mobster who laundered money for the city's mafia syndicate. These changes will be reflected in our development notes.
 
 (Robin) Shifted the narrative to focus on one story line, with split focus between Tiara and Quinn. 
 
 The player plays as Dominic, the mixologist of a small bar lounge. Through him, the player will meet and interact with Tiara, a woman who has been through countless amounts of verbal and physical harassment from her abusive boyfriend. However, at this point in time, Tiara fought back in order to survive against her partner, using a kitchen knife to end his life. She quickly ran from the scene and entered the mixology lounge to drink and forget. Throughout this time, by chatting and making good drinks, the player will learn more about her situation through small clues embedded in quipps and conversation. The better the atmosphere, the better the info. The second customer is Quinn. He has been running with the crime syndicates working as a frontman for a "mattress store," in which he cleans stolen money. He had enough being a grunt for the higher ups, so he pocketed some of the cash, and made a run for it. He plans on bouncing town and leaving, but the mob caught wind and are sure to look out for him. He enteres the mixology lounge in order to lay low, but not without a farewell situation. By chatting and offering good drinks with Quinn, he offers more info about his departure. The second second half of the game focuses on the problems of the two customers, as they find companionship with one another as well as with the player. Tiara opens up about her murder, but is scarred by the experience. Quinn hopes to bounce without any more people finding out, going as far as to bribe the player with some of the pocketed money. The finale of the game conducts with a detective entering the mixology lounge while Quinn is sitting off to the side with Tiara laying down on a couch, too inebriated to move. Detective Murphy then opens up about an ongoing investigation, and asks the player if they have any leads. The detective does not reveal any information about the case, so it is up to the player to mention either of Tiara's murder, or of Quinn's money laundering. Or the player may choose to stay quiet, which could jeopordize themselves if done incorrectly. Through a series of dialog choices and the potential opportunity to offer the Detective drinks, the player attempt to talk the detective out of following the cases by reasoning with the officer, get the customers arrested and taken in for custody, or the player themselves could land in jail for attempting to cover up the crimes.
+
+(Lauren) Created the mixing drinks UI. Implemented assets into unity and created the sprites for each character. Worked to create moving dialog in which the character sprites pop up correspondingly with whoever is speaking at the moment. Implemented the ending encounter with the officer, and working on the endcard and beginning screens.
+
+May 8th, 2024
+(Robin) Finalized the new script for the game, which can be seen [here](https://docs.google.com/document/d/1pKZ-BqNhRjb6lAigX2OU9PTJMp9a1SGGJlop-O5uYa8/edit?usp=sharing).
+
+(Lauren) Implemented the final touches of the game. Finalized the sprites and assets and implemented them into the game. Play tested and recorded the prototype. Launched the project onto itch.io.
