@@ -59,6 +59,8 @@ Serve a few customers during happy hour and talk with them. Each character is su
 #### Preview of Prototype:
 [View the Prototype](https://youtu.be/AWk0PFcCQxU)
 
+<video src="https://youtu.be/AWk0PFcCQxU"></video>
+
 #### Screenshots of Prototype:
 <a><img src="Visual_Assets/sc_1.PNG" alt="screenshot_1"></a>
 
