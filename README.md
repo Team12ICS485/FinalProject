@@ -121,7 +121,7 @@ The player plays as Dominic, the mixologist of a small bar lounge. Through him, 
 
 (Lauren) Created the mixing drinks UI. Implemented assets into unity and created the sprites for each character. Worked to create moving dialog in which the character sprites pop up correspondingly with whoever is speaking at the moment. Implemented the ending encounter with the officer, and working on the endcard and beginning screens.
 
-May 8th, 2024
+### May 8th, 2024
 (Robin) Finalized the new script for the game, which can be seen [here](https://docs.google.com/document/d/1pKZ-BqNhRjb6lAigX2OU9PTJMp9a1SGGJlop-O5uYa8/edit?usp=sharing).
 
 (Lauren) Implemented the final touches of the game. Finalized the sprites and assets and implemented them into the game. Play tested and recorded the prototype. Launched the project onto itch.io.
