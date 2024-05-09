@@ -61,7 +61,7 @@ My first customer of the night.
 Dominic: Welcome, come on in. Have a seat, anywhere on the bar is fine.
 
 Tiara: Good evening.
-She bobbed her head as she entered the room. As the door thudded behind her, she jumped slightly at the sound. ( nervous. )
+She bobbed her head as she entered the room. As the door thudded behind her, she jumped slightly at the sound.
 
 As she stammered across the room, her eyes darted around the decor, gazing at the portraits and artistry tapered across the walls. 
 
@@ -76,7 +76,6 @@ Dominic: Actually this is a mixology lounge. Better than your typical 5 bottle b
 Be confident: Anything you ask for, I can make it easily.
 Be considerate: If you want anything made to order, just ask.
 Be cocky: Anything you can think of, I’ll make it taste better than anything you’ve tried before.
-
 
 Tiara: A-Alright, then… how about a Manhattan? A little sweeter, if that’s okay.
 
