@@ -41,7 +41,13 @@ Serve a few customers during happy hour and talk with them. Each character is su
 
 ### April 3rd, 2024: Prototype 1
 (Connor) Created visual assets for the first set of characters. The main protagonist who is the bartender and owner of the mixology lounge named Dominic. The first customer is Tiara, who suffered a recent breakup. The second customer is Quinn, and currently in the works of developing assets for the UI and the background of the game.
-<a><img src="Visual_Assets/Portraits/Dominic_Portrait.png" width="32" height="32"></a>
+
+<a><img src="Visual_Assets/Portraits/Dominic_Portrait.png" alt="Dominic" width="200" height="200"></a>
+
+<a><img src="Visual_Assets/Portraits/Tiara_Portrait.png" alt="Tiara" width="200" height="200"></a>
+
+<a><img src="Visual_Assets/Portraits/Quinn_Portrait.png" alt="Quinn" width="200" height="200"></a>
+
 ![Dominic](Visual_Assets/Portraits/Dominic_Portrait.png)
 ![Tiara](Visual_Assets/Portraits/Tiara_Portrait.png)
 ![Quinn](Visual_Assets/Portraits/Quinn_Portrait.png)
@@ -94,6 +100,8 @@ Dominic: And here you are miss, one Manhattan. With an extra cherry on top just 
 (Lauren) Creating the multiple choice options for dialoge was implemented.
 
 (Connor) Touch ups on assets and dialog boxes were completed. 
+
+<a><img src="Visual_Assets/Portraits/Officer_Portrait.png" alt="Murphy" width="200" height="200"></a>
 
 ![Officer](Visual_Assets/Portraits/Officer_Portrait.png)
 
