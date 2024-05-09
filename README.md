@@ -51,6 +51,7 @@ Serve a few customers during happy hour and talk with them. Each character is su
 (Lauren) Crafted and put together the current assets into a UI menu, implemented the dialogue to scroll through on click in the Unity screen, screen recorded the demo of the prototype 1.
 
 #### Preview of Prototype:
+[View the Prototype](https://youtu.be/AWk0PFcCQxU)
 
 ##### Script:
 Another late night at the small bar. Dominic is reading a newspaper about recent events that have been happening, news of a sudden crime occured earlier in the week, just in the nearby neighorhoods. Disgruntled, he continues his startup at the Mixology Lounge, an area of little room, but lots of attention for the finer things. 
